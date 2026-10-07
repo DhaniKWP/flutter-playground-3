@@ -29,7 +29,19 @@ class BasicTextWidget extends StatelessWidget {
       'testing text',
       style: TextStyle(
         fontSize: 30,
+        fontWeight: FontWeight.w900,
+        fontStyle: FontStyle.italic,
+        fontFamily: 'Arial',
+        decoration: TextDecoration.underline,
+        letterSpacing: 5,
         color: Colors.purpleAccent,
+        shadows: [
+          Shadow(
+            blurRadius: 10,
+            offset: Offset(3, 3),
+            color: Colors.black,
+          ),
+        ],
       ),
     );
   }
