@@ -17,36 +17,57 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: Center(
-          child: BasicTextWidget(),
+            child: SpacingTextWidget(),
         ),
       ),
     );
   }
 }
 
-class BasicTextWidget extends StatelessWidget {
-  const BasicTextWidget({super.key});
+class SpacingTextWidget extends StatelessWidget {
+  const SpacingTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'testing text',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.w900,
-        fontStyle: FontStyle.italic,
-        fontFamily: 'Arial',
-        decoration: TextDecoration.underline,
-        letterSpacing: 5,
-        color: Colors.purpleAccent,
-        shadows: [
-          Shadow(
-            blurRadius: 10,
-            offset: Offset(3, 3),
-            color: Colors.black,
+    return const Column(
+      children: [
+        Text(
+          'APA AJAH NORMAL  ',
+          style: TextStyle(
+            fontSize: 20,
           ),
-        ],
-      ),
+        ),
+
+        SizedBox(height: 20),
+
+        Text(
+          'Ini pake letter spacing',
+          style: TextStyle(
+            fontSize: 20,
+            letterSpacing: 5,
+          ),
+        ),
+
+        SizedBox(height: 20),
+
+        Text(
+          'Aku cinta indonesia',
+          style: TextStyle(
+            fontSize: 20,
+            wordSpacing: 10,
+          ),
+        ),
+
+        SizedBox(height: 20),
+
+        Text(
+          'AYAM\nIKAN\nSAPI',
+          style: TextStyle(
+            fontSize: 20,
+            height: 2,
+          ),
+        ),
+      ],
     );
   }
 }
