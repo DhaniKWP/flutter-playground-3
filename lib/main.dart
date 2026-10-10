@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
 }
 
 
+
 class DecorationTextWidget extends StatelessWidget {
   const DecorationTextWidget({super.key});
 
@@ -35,9 +36,9 @@ class DecorationTextWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'INI KALIMAT ADA GARIS BAWAHNYA',
+          'PECEL LELE PAK WARTONO',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 22,
             decoration: TextDecoration.underline,
           ),
         ),
@@ -45,9 +46,19 @@ class DecorationTextWidget extends StatelessWidget {
         SizedBox(height: 20),
 
         Text(
-          'TEKS INi DICORET',
+          'HARGA PROMO',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 22,
+            decoration: TextDecoration.overline,
+          ),
+        ),
+
+        SizedBox(height: 20),
+
+        Text(
+          'HARGA NORMAL Rp25.000',
+          style: TextStyle(
+            fontSize: 22,
             decoration: TextDecoration.lineThrough,
           ),
         ),
@@ -55,27 +66,25 @@ class DecorationTextWidget extends StatelessWidget {
         SizedBox(height: 20),
 
         Text(
-          'BACKGROUND',
+          'PAKET HEMAT Rp15.000',
           style: TextStyle(
-            fontSize: 20,
-            backgroundColor: Colors.pink,
+            fontSize: 22,
+            color: Colors.green,
+            decoration: TextDecoration.underline,
+            decorationColor: Colors.red,
+            decorationThickness: 3,
           ),
         ),
 
         SizedBox(height: 20),
 
         Text(
-          'PECEL LELE PAK WARTONO',
+          'MENU FAVORIT',
           style: TextStyle(
-            fontSize: 5 5,
-            color: Colors.redAccent,
-            shadows: [
-              Shadow(
-                offset: Offset(3, 3),
-                blurRadius: 5,
-                color: Colors.black54,
-              ),
-            ],
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            decoration: TextDecoration.underline,
+            decorationStyle: TextDecorationStyle.dashed,
           ),
         ),
       ],
