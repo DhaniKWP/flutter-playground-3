@@ -16,55 +16,66 @@ class MyApp extends StatelessWidget {
           title: Text("ini header"),
           centerTitle: true,
         ),
-        body: Center(
-            child: SpacingTextWidget(),
+        body: const Padding(
+          padding: EdgeInsets.all(20),
+          child: DecorationTextWidget(),
         ),
       ),
     );
   }
 }
 
-class SpacingTextWidget extends StatelessWidget {
-  const SpacingTextWidget({super.key});
+
+class DecorationTextWidget extends StatelessWidget {
+  const DecorationTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'APA AJAH NORMAL  ',
+          'INI KALIMAT ADA GARIS BAWAHNYA',
           style: TextStyle(
             fontSize: 20,
+            decoration: TextDecoration.underline,
           ),
         ),
 
         SizedBox(height: 20),
 
         Text(
-          'Ini pake letter spacing',
+          'TEKS INi DICORET',
           style: TextStyle(
             fontSize: 20,
-            letterSpacing: 5,
+            decoration: TextDecoration.lineThrough,
           ),
         ),
 
         SizedBox(height: 20),
 
         Text(
-          'Aku cinta indonesia',
+          'BACKGROUND',
           style: TextStyle(
             fontSize: 20,
-            wordSpacing: 10,
+            backgroundColor: Colors.pink,
           ),
         ),
 
         SizedBox(height: 20),
 
         Text(
-          'AYAM\nIKAN\nSAPI',
+          'PECEL LELE PAK WARTONO',
           style: TextStyle(
-            fontSize: 20,
-            height: 2,
+            fontSize: 5 5,
+            color: Colors.redAccent,
+            shadows: [
+              Shadow(
+                offset: Offset(3, 3),
+                blurRadius: 5,
+                color: Colors.black54,
+              ),
+            ],
           ),
         ),
       ],
