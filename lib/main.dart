@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,81 +14,65 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("ini header"),
+          title: const Text("Text Alignment"),
           centerTitle: true,
         ),
         body: const Padding(
           padding: EdgeInsets.all(20),
-          child: DecorationTextWidget(),
+          child: AlignmentTextWidget(),
         ),
       ),
     );
   }
 }
 
-
-
-class DecorationTextWidget extends StatelessWidget {
-  const DecorationTextWidget({super.key});
+class AlignmentTextWidget extends StatelessWidget {
+  const AlignmentTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'PECEL LELE PAK WARTONO',
-          style: TextStyle(
-            fontSize: 22,
-            decoration: TextDecoration.underline,
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+      ),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'RATA KIRI',
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 20),
           ),
-        ),
 
-        SizedBox(height: 20),
+          SizedBox(height: 20),
 
-        Text(
-          'HARGA PROMO',
-          style: TextStyle(
-            fontSize: 22,
-            decoration: TextDecoration.overline,
+          Text(
+            'RATA TENGAH',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20),
           ),
-        ),
 
-        SizedBox(height: 20),
+          SizedBox(height: 20),
 
-        Text(
-          'HARGA NORMAL Rp25.000',
-          style: TextStyle(
-            fontSize: 22,
-            decoration: TextDecoration.lineThrough,
+          Text(
+            'RATA KANAN',
+            textAlign: TextAlign.right,
+            style: TextStyle(fontSize: 20),
           ),
-        ),
 
-        SizedBox(height: 20),
+          SizedBox(height: 20),
 
-        Text(
-          'PAKET HEMAT Rp15.000',
-          style: TextStyle(
-            fontSize: 22,
-            color: Colors.green,
-            decoration: TextDecoration.underline,
-            decorationColor: Colors.red,
-            decorationThickness: 3,
+          Text(
+            'pecel lele adalah menu favorit. '
+                'menu ada ayam goreng, ikan lele, '
+                'nasi putih, dan sambal yang enak.',
+            textAlign: TextAlign.justify,
+            style: TextStyle(fontSize: 16),
           ),
-        ),
-
-        SizedBox(height: 20),
-
-        Text(
-          'MENU FAVORIT',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            decoration: TextDecoration.underline,
-            decorationStyle: TextDecorationStyle.dashed,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
