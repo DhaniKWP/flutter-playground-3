@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         body: const Padding(
           padding: EdgeInsets.all(20),
-          child: OverflowTextWidget(),
+          child: RichTextWidget(),
         ),
       ),
     );
@@ -27,28 +26,56 @@ class MyApp extends StatelessWidget {
 }
 
 
-class OverflowTextWidget extends StatelessWidget {
-  const OverflowTextWidget({super.key});
+
+class RichTextWidget extends StatelessWidget {
+  const RichTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 250,
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-      ),
-      child: const Text(
-        'Pecel lele Pak Wartono menyediakan '
-            'pecel lele, ayam goreng, bebek goreng, '
-            'nasi putih, sambal, dan es teh manis '
-            'dengan harga yang terjangkau.',
-        maxLines: 4,
-        overflow: TextOverflow.ellipsis,
-        softWrap: true,
+    return RichText(
+      text: TextSpan(
         style: TextStyle(
-          fontSize: 16,
+          fontSize: 20,
+          color: Colors.black,
         ),
+        children: [
+          TextSpan(
+            text: 'nama: ',
+          ),
+
+          TextSpan(
+            text: 'Dhani',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+
+          TextSpan(
+            text: '\nstatus: ',
+          ),
+
+          TextSpan(
+            text: 'mahasiswa aktif',
+            style: TextStyle(
+              color: Colors.green,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+
+          TextSpan(
+            text: '\njurusan: ',
+          ),
+
+          TextSpan(
+            text: 'software engineering',
+            style: TextStyle(
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.orange,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
       ),
     );
   }
