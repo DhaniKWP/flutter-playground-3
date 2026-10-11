@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("overflowtext"),
+          title: const Text("RichText dan TextSpan"),
           centerTitle: true,
         ),
         body: const Padding(
