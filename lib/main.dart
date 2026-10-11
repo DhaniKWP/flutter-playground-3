@@ -14,64 +14,41 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Text Alignment"),
+          title: const Text("overflowtext"),
           centerTitle: true,
         ),
         body: const Padding(
           padding: EdgeInsets.all(20),
-          child: AlignmentTextWidget(),
+          child: OverflowTextWidget(),
         ),
       ),
     );
   }
 }
 
-class AlignmentTextWidget extends StatelessWidget {
-  const AlignmentTextWidget({super.key});
+
+class OverflowTextWidget extends StatelessWidget {
+  const OverflowTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: 250,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
       ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            'RATA KIRI',
-            textAlign: TextAlign.left,
-            style: TextStyle(fontSize: 20),
-          ),
-
-          SizedBox(height: 20),
-
-          Text(
-            'RATA TENGAH',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20),
-          ),
-
-          SizedBox(height: 20),
-
-          Text(
-            'RATA KANAN',
-            textAlign: TextAlign.right,
-            style: TextStyle(fontSize: 20),
-          ),
-
-          SizedBox(height: 20),
-
-          Text(
-            'pecel lele adalah menu favorit. '
-                'menu ada ayam goreng, ikan lele, '
-                'nasi putih, dan sambal yang enak.',
-            textAlign: TextAlign.justify,
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+      child: const Text(
+        'Pecel lele Pak Wartono menyediakan '
+            'pecel lele, ayam goreng, bebek goreng, '
+            'nasi putih, sambal, dan es teh manis '
+            'dengan harga yang terjangkau.',
+        maxLines: 2,
+        overflow: TextOverflow.clip,
+        softWrap: true,
+        style: TextStyle(
+          fontSize: 16,
+        ),
       ),
     );
   }
