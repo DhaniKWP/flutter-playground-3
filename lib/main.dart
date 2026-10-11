@@ -44,7 +44,7 @@ class OverflowTextWidget extends StatelessWidget {
             'nasi putih, sambal, dan es teh manis '
             'dengan harga yang terjangkau.',
         maxLines: 4,
-        overflow: TextOverflow.clip,
+        overflow: TextOverflow.ellipsis,
         softWrap: true,
         style: TextStyle(
           fontSize: 16,
