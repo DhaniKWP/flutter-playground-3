@@ -43,7 +43,7 @@ class OverflowTextWidget extends StatelessWidget {
             'pecel lele, ayam goreng, bebek goreng, '
             'nasi putih, sambal, dan es teh manis '
             'dengan harga yang terjangkau.',
-        maxLines: 2,
+        maxLines: 4,
         overflow: TextOverflow.clip,
         softWrap: true,
         style: TextStyle(
