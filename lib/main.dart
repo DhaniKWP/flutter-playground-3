@@ -13,12 +13,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("TextScaler"),
+          title: const Text("SectionTittle"),
           centerTitle: true,
         ),
         body: const Padding(
           padding: EdgeInsets.all(20),
-          child: TextScalerWidget(),
+          child: SectionTitleWidget(),
         ),
       ),
     );
@@ -54,6 +54,44 @@ class TextScalerWidget extends StatelessWidget {
           textScaler: TextScaler.linear(3.0), // untuk megatur skalanya misal ukuran font 20 kalo scale nya 3 bakal 3x lebih besar
           style: TextStyle(fontSize: 20), //ngatur ukuran dasar fontnya
         ),
+      ],
+    );
+  }
+}
+
+class SectionTitle extends StatelessWidget {
+  final String title;
+
+  const SectionTitle({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: const TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+}
+
+class SectionTitleWidget extends StatelessWidget {
+  const SectionTitleWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionTitle(title: "belajar flutter"),
+        SizedBox(height: 15),
+        SectionTitle(title: "belajar fart"),
+        SizedBox(height: 15),
+        SectionTitle(title: "belajar textStyle"),
       ],
     );
   }
