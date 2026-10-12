@@ -13,70 +13,48 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("RichText dan TextSpan"),
+          title: const Text("TextScaler"),
           centerTitle: true,
         ),
         body: const Padding(
           padding: EdgeInsets.all(20),
-          child: RichTextWidget(),
+          child: TextScalerWidget(),
         ),
       ),
     );
   }
 }
 
-
-
-class RichTextWidget extends StatelessWidget {
-  const RichTextWidget({super.key});
+class TextScalerWidget extends StatelessWidget {
+  const TextScalerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.black,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'GlOBAL INSTITUTE',
+          textScaler: TextScaler.linear(9.0),
+          style: TextStyle(fontSize: 10),
         ),
-        children: [
-          TextSpan(
-            text: 'nama: ',
-          ),
 
-          TextSpan(
-            text: 'Dhani',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-            ),
-          ),
+        const SizedBox(height: 20),
 
-          TextSpan(
-            text: '\nstatus: ',
-          ),
+        const Text(
+          'DHANI KUSUMA WARDANA PUTRA',
+          textScaler: TextScaler.linear(3),
+          style: TextStyle(fontSize: 10),
+        ),
 
-          TextSpan(
-            text: 'mahasiswa aktif',
-            style: TextStyle(
-              color: Colors.green,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
+        const SizedBox(height: 20),
 
-          TextSpan(
-            text: '\njurusan: ',
-          ),
-
-          TextSpan(
-            text: 'software engineering',
-            style: TextStyle(
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.orange,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ],
-      ),
+        const Text(
+          'INDONESIA',
+          textScaler: TextScaler.linear(3.0), // untuk megatur skalanya misal ukuran font 20 kalo scale nya 3 bakal 3x lebih besar
+          style: TextStyle(fontSize: 20), //ngatur ukuran dasar fontnya
+        ),
+      ],
     );
   }
 }
